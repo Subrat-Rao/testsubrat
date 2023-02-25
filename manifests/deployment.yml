@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: subratraotest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: subratraotest
+  template:
+    metadata:
+      labels:
+        app: subratraotest 
+    spec:
+      containers:
+        - name: subratraotest 
+          image: dssnew.azurecr.io/subratraotest
+          ports:
+          - containerPort: 5295
